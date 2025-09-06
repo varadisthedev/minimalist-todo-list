@@ -3,18 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>minimalist TODO list</title>
 </head>
+
+<!-- internal css for our todo list -->
+<style>
+
+    /* custom fonts */
+    @font-face {
+        font-family: custom1;
+        src: url(/fonts/Poppins/Poppins-Bold.ttf);
+        font-weight: bold;
+    }
+    /* centering the whole div */
+    body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;  /* full screen height */
+    margin: 0;
+    cursor: url('/arrowhead.svg'),pointer;
+    }
+
+    .todo{
+        background-color: whitesmoke;
+        border:4px solid black;
+        border-radius: 16px;
+        width:fit-content;
+        padding: 20px;
+
+        /* adding a shadow */
+        box-shadow: 4px 4px rgb(83, 83, 83);
+        font-family: custom1;
+    }
+
+    .todo-input {
+    padding: 10px 14px;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    outline: none; /* removes blue highlight */
+    font-size: 16px;
+    transition: border-color 0.2s ease;
+    width:450px;
+    }
+
+    .todo-input:focus {
+        border-color: #000; /* or any highlight color */
+    }
+    
+    #taskbutton {
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin-left: 4px;
+        display: flex;            /* ensures img centers inside */
+        align-items: center;
+    }
+
+    #taskbutton img {
+        all:unset;
+        border: none;
+        height: 34px;
+        width: auto;
+    }
+    .input_container{
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+    }
+
+
+ 
+</style>
 <body>
     <div class="todo">
         <h1> hello there!, this is a todo list!</h1>
-        <input id="taskInput" placeholder="enter your task here">
-        <button id="taskbutton">add</button>
+        <div class="input_container">
+            <input id="taskInput" placeholder="enter your task here" class="todo-input">
+            <button id="taskbutton" >
+                <img alt="image missing" src="plus.png">
+            </button>
+        </div>
+        
 
-        <ul id="list">
+        <ul id="ongoing_list">
             <li>clean the bedroom </li>
             <li>atttend the devfest 2025</li>
         </ul>
+
+        <div id="completed_list">
+            <br>
+            <h1>completed tasks</h1>
+            <ul style="text-decoration: line-through;">
+                <li>cleanign the room</li>
+                <li>studyed for TOC</li>
+                <li>buy a new headphone</li>
+            </ul>
+        </div>
 
     </div> 
     <!-- attaching js -->

@@ -1,7 +1,8 @@
 //adding itesm to the list (core of TODO)
-const list=document.getElementById("list")
+const list=document.getElementById("ongoing_list")
 const taskInput=document.getElementById("taskInput")
 const button=document.getElementById("taskbutton")
+const on_list=document.getElementById("completed_list")
 
 const adder=()=>{
     const item=document.createElement("li")
