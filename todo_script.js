@@ -19,6 +19,17 @@ list.addEventListener("click",(e) => {
   }
 });
 
+const deletion=(e)=>{
+  // now e is event obj automaticaly passed by the below call
+  if (e.target.tagName==="LI"){
+    e.target.remove();
+  }
+}
+
+
+//task deletion for completed list
+c_list.addEventListener("click",deletion)
+
 
 button.addEventListener("click",adder)
 taskInput.addEventListener("keydown",(e)=>{if (e.key=="Enter"){
