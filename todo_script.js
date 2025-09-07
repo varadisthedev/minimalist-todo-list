@@ -24,6 +24,12 @@ list.addEventListener("click",(e) => {
 
 
 button.addEventListener("click",adder)
+taskInput.addEventListener("keydown",(e)=>{if (e.key=="Enter"){
+  adder();
+}
+})
+
+
 
 
 
