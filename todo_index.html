@@ -22,7 +22,7 @@
     align-items: center;
     min-height: 100vh;  /* full screen height */
     margin: 0;
-    cursor: url('/arrowhead.svg'),pointer;
+    cursor: url('/assets/arrowhead.svg'),pointer;
     }
 
     .todo{
@@ -51,7 +51,7 @@
         border-color: #000; /* or any highlight color */
     }
     
-    #taskbutton {
+    #taskbutton,#c_delete{
         background: none;
         border: none;
         cursor: pointer;
@@ -66,10 +66,21 @@
         height: 34px;
         width: auto;
     }
+
+    #c_delete img {
+        all:unset;
+        border: none;
+        height: 34px;
+        width: 34px;
+    }
     .input_container{
         display: flex;
         align-items: center;
         padding-left: 10px;
+    }
+    .hero{
+        display: flex;
+        flex-direction: row;
     }
 
 
@@ -81,7 +92,7 @@
         <div class="input_container">
             <input id="taskInput" placeholder="enter your task here" class="todo-input">
             <button id="taskbutton" >
-                <img alt="image missing" src="plus.png">
+                <img alt="image missing" src="/assets/plus.png">
             </button>
         </div>
         
@@ -92,8 +103,15 @@
         </ul>
 
         <div>
-            <h1>completed tasks</h1>
-            <button id="c_delete">delete all tasks</button>
+            
+            <div class="hero">
+                <h1>completed tasks</h1>
+                <button id="c_delete">
+                    <img alt="notfound" src="/assets/bin.png">
+                </button>
+
+            </div>
+            
             <ul style="text-decoration: line-through;" id="completed_list">
                 <li>cleanign the room</li>
                 <li>studyed for TOC</li>
