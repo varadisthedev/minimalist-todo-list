@@ -15,6 +15,10 @@
         src: url(/fonts/Poppins/Poppins-Bold.ttf);
         font-weight: bold;
     }
+    @font-face {
+        font-family: custom2;
+        src: url(/fonts/Poppins/Poppins-Medium.ttf);
+    }
     /* centering the whole div */
     body {
     display: flex;
@@ -67,7 +71,7 @@
         width: auto;
     }
 
-    #c_delete img {
+    #c_delete img , #o_delete img{
         all:unset;
         border: none;
         height: 34px;
@@ -82,13 +86,27 @@
         display: flex;
         flex-direction: row;
     }
-
+    .lists{
+        font-family:custom2;
+    }
 
  
 </style>
 <body>
     <div class="todo">
-        <h1> Welcome, today's tasks are</h1>
+        <div class="hero">
+            <h1> Welcome Varad!</h1>
+            <button id="o_delete">
+                <img alt="notfound" src="/assets/bin.png">
+            </button>
+        </div>
+        
+        <h1>Ongoing Tasks:</h1>
+        <ul id="ongoing_list" class="lists">
+            <li>clean the bedroom </li>
+            <li>arrange drawers</li>
+        </ul>
+
         <div class="input_container">
             <input id="taskInput" placeholder="enter your task here" class="todo-input">
             <button id="taskbutton" >
@@ -96,12 +114,8 @@
             </button>
         </div>
         
-        <button id="o_delete">delete all tasks</button>
-        <ul id="ongoing_list">
-            <li>clean the bedroom </li>
-            <li>atttend the devfest 2025</li>
-        </ul>
-
+        
+        
         <div>
             
             <div class="hero">
@@ -112,9 +126,9 @@
 
             </div>
             
-            <ul style="text-decoration: line-through;" id="completed_list">
-                <li>cleanign the room</li>
-                <li>studyed for TOC</li>
+            <ul style="text-decoration: line-through;" id="completed_list" class="lists">
+                <li>study for test</li>
+                <li>go on a walk</li>
                 <li>buy a new headphone</li>
             </ul>
         </div>
